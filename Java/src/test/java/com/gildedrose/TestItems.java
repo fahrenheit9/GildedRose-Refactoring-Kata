@@ -6,6 +6,7 @@ public class TestItems {
     private static final String AGED_BRIE = "Aged Brie";
     private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
     private static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    private static final String CONJURED = "Conjured Mana Cake";
 
     private TestItems() {
     }
@@ -24,5 +25,9 @@ public class TestItems {
 
     public static Item backstagePasses(int sellIn, int quality) {
         return new Item(BACKSTAGE_PASSES, sellIn, quality);
+    }
+
+    public static Item conjured(int sellIn, int quality) {
+        return new Item(CONJURED, sellIn, quality);
     }
 }

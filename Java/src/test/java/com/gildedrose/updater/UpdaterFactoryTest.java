@@ -45,6 +45,18 @@ class UpdaterFactoryTest {
     }
 
     @Test
+    void returnsConjuredItemUpdaterForConjured() {
+        // Setup
+        Item item = TestItems.conjured(10, 20);
+
+        // Exercise
+        ItemUpdater updater = UpdaterFactory.forItem(item);
+
+        // Verify
+        assertThat(updater).isInstanceOf(ConjuredItemUpdater.class);
+    }
+
+    @Test
     void returnsDefaultItemUpdaterForAnyOtherItem() {
         // Setup
         Item item = TestItems.normalItem(10, 20);
