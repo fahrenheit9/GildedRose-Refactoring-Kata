@@ -3,6 +3,9 @@ package com.gildedrose;
 import com.gildedrose.updater.ItemUpdater;
 import com.gildedrose.updater.UpdaterFactory;
 
+/**
+ * Entry point for updating the item inventory.
+ */
 class GildedRose {
 
     private final Item[] items;

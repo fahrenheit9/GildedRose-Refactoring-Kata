@@ -2,6 +2,9 @@ package com.gildedrose.updater;
 
 import com.gildedrose.Item;
 
+/**
+ * Selects and provides the appropriate {@link ItemUpdater} for a given item, based on its name.
+ */
 public class UpdaterFactory {
 
     private static final String AGED_BRIE = "Aged Brie";
