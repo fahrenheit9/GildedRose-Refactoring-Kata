@@ -1,7 +1,14 @@
 package com.gildedrose;
 
 class GildedRose {
-    Item[] items;
+
+    private static final String AGED_BRIE = "Aged Brie";
+    private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    private static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    private static final int MIN_QUALITY = 0;
+    private static final int MAX_QUALITY = 50;
+
+    final Item[] items;
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -9,54 +16,65 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (items[i].quality > 0) {
-                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                        items[i].quality = items[i].quality - 1;
-                    }
+
+            Item item = items[i];
+
+            updateItemQuality(item);
+        }
+    }
+
+    ////////////////////
+    // HELPER METHODS
+    ////////////////////
+
+    private void updateItemQuality(Item item) {
+
+        if (!item.name.equals(AGED_BRIE) && !item.name.equals(BACKSTAGE_PASSES)) {
+            if (!item.name.equals(SULFURAS)) {
+                decreaseQuality(item);
+            }
+        } else {
+            increaseQuality(item);
+
+            if (item.name.equals(BACKSTAGE_PASSES)) {
+                if (item.sellIn < 11) {
+                    increaseQuality(item);
                 }
-            } else {
-                if (items[i].quality < 50) {
-                    items[i].quality = items[i].quality + 1;
 
-                    if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].sellIn < 11) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
-
-                        if (items[i].sellIn < 6) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
-                    }
+                if (item.sellIn < 6) {
+                    increaseQuality(item);
                 }
             }
+        }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sellIn = items[i].sellIn - 1;
-            }
+        if (!item.name.equals(SULFURAS)) {
+            item.sellIn--;
+        }
 
-            if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].quality > 0) {
-                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                items[i].quality = items[i].quality - 1;
-                            }
-                        }
-                    } else {
-                        items[i].quality = items[i].quality - items[i].quality;
+        if (item.sellIn < 0) {
+            if (!item.name.equals(AGED_BRIE)) {
+                if (!item.name.equals(BACKSTAGE_PASSES)) {
+                    if (!item.name.equals(SULFURAS)) {
+                        decreaseQuality(item);
                     }
                 } else {
-                    if (items[i].quality < 50) {
-                        items[i].quality = items[i].quality + 1;
-                    }
+                    item.quality = MIN_QUALITY;
                 }
+            } else {
+                increaseQuality(item);
             }
+        }
+    }
+
+    private void increaseQuality(Item item) {
+        if (item.quality < MAX_QUALITY) {
+            item.quality++;
+        }
+    }
+
+    private void decreaseQuality(Item item) {
+        if (item.quality > MIN_QUALITY) {
+            item.quality--;
         }
     }
 }
