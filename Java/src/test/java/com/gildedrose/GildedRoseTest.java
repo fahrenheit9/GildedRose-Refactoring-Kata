@@ -21,7 +21,7 @@ class GildedRoseTest {
         app.updateQuality();
 
         // Verify
-        assertThat(app.items[0].name).isEqualTo(expectedName);
+        assertThat(app.items()[0].name).isEqualTo(expectedName);
     }
 
     @Nested
@@ -38,8 +38,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(9);
-            assertThat(app.items[0].quality).isEqualTo(19);
+            assertThat(app.items()[0].sellIn).isEqualTo(9);
+            assertThat(app.items()[0].quality).isEqualTo(19);
         }
 
         @Test
@@ -52,8 +52,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-1);
-            assertThat(app.items[0].quality).isEqualTo(18);
+            assertThat(app.items()[0].sellIn).isEqualTo(-1);
+            assertThat(app.items()[0].quality).isEqualTo(18);
         }
 
         @Test
@@ -66,8 +66,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-2);
-            assertThat(app.items[0].quality).isEqualTo(18);
+            assertThat(app.items()[0].sellIn).isEqualTo(-2);
+            assertThat(app.items()[0].quality).isEqualTo(18);
         }
 
         @Test
@@ -80,8 +80,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-1);
-            assertThat(app.items[0].quality).isEqualTo(0);
+            assertThat(app.items()[0].sellIn).isEqualTo(-1);
+            assertThat(app.items()[0].quality).isEqualTo(0);
         }
     }
 
@@ -99,8 +99,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(9);
-            assertThat(app.items[0].quality).isEqualTo(21);
+            assertThat(app.items()[0].sellIn).isEqualTo(9);
+            assertThat(app.items()[0].quality).isEqualTo(21);
         }
 
         @Test
@@ -113,8 +113,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-1);
-            assertThat(app.items[0].quality).isEqualTo(22);
+            assertThat(app.items()[0].sellIn).isEqualTo(-1);
+            assertThat(app.items()[0].quality).isEqualTo(22);
         }
 
         @Test
@@ -127,8 +127,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-2);
-            assertThat(app.items[0].quality).isEqualTo(22);
+            assertThat(app.items()[0].sellIn).isEqualTo(-2);
+            assertThat(app.items()[0].quality).isEqualTo(22);
         }
 
         @Test
@@ -141,8 +141,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-1);
-            assertThat(app.items[0].quality).isEqualTo(50);
+            assertThat(app.items()[0].sellIn).isEqualTo(-1);
+            assertThat(app.items()[0].quality).isEqualTo(50);
         }
 
         @Test
@@ -155,8 +155,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-1);
-            assertThat(app.items[0].quality).isEqualTo(50);
+            assertThat(app.items()[0].sellIn).isEqualTo(-1);
+            assertThat(app.items()[0].quality).isEqualTo(50);
         }
     }
 
@@ -173,8 +173,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(5);
-            assertThat(app.items[0].quality).isEqualTo(80);
+            assertThat(app.items()[0].sellIn).isEqualTo(5);
+            assertThat(app.items()[0].quality).isEqualTo(80);
         }
 
         @Test
@@ -187,8 +187,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-5);
-            assertThat(app.items[0].quality).isEqualTo(80);
+            assertThat(app.items()[0].sellIn).isEqualTo(-5);
+            assertThat(app.items()[0].quality).isEqualTo(80);
         }
     }
 
@@ -206,8 +206,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(10);
-            assertThat(app.items[0].quality).isEqualTo(21);
+            assertThat(app.items()[0].sellIn).isEqualTo(10);
+            assertThat(app.items()[0].quality).isEqualTo(21);
         }
 
         @Test
@@ -220,8 +220,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(9);
-            assertThat(app.items[0].quality).isEqualTo(22);
+            assertThat(app.items()[0].sellIn).isEqualTo(9);
+            assertThat(app.items()[0].quality).isEqualTo(22);
         }
 
         @Test
@@ -234,8 +234,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(5);
-            assertThat(app.items[0].quality).isEqualTo(22);
+            assertThat(app.items()[0].sellIn).isEqualTo(5);
+            assertThat(app.items()[0].quality).isEqualTo(22);
         }
 
         @Test
@@ -248,8 +248,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(4);
-            assertThat(app.items[0].quality).isEqualTo(23);
+            assertThat(app.items()[0].sellIn).isEqualTo(4);
+            assertThat(app.items()[0].quality).isEqualTo(23);
         }
 
         @Test
@@ -262,8 +262,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(0);
-            assertThat(app.items[0].quality).isEqualTo(23);
+            assertThat(app.items()[0].sellIn).isEqualTo(0);
+            assertThat(app.items()[0].quality).isEqualTo(23);
         }
 
         @Test
@@ -276,8 +276,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-1);
-            assertThat(app.items[0].quality).isEqualTo(0);
+            assertThat(app.items()[0].sellIn).isEqualTo(-1);
+            assertThat(app.items()[0].quality).isEqualTo(0);
         }
 
         @Test
@@ -290,8 +290,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(-2);
-            assertThat(app.items[0].quality).isEqualTo(0);
+            assertThat(app.items()[0].sellIn).isEqualTo(-2);
+            assertThat(app.items()[0].quality).isEqualTo(0);
         }
 
         @Test
@@ -304,8 +304,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(4);
-            assertThat(app.items[0].quality).isEqualTo(50);
+            assertThat(app.items()[0].sellIn).isEqualTo(4);
+            assertThat(app.items()[0].quality).isEqualTo(50);
         }
 
         @Test
@@ -318,8 +318,8 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(4);
-            assertThat(app.items[0].quality).isEqualTo(50);
+            assertThat(app.items()[0].sellIn).isEqualTo(4);
+            assertThat(app.items()[0].quality).isEqualTo(50);
         }
     }
 
@@ -344,16 +344,16 @@ class GildedRoseTest {
 
             // Exercise
             app.updateQuality();
-            int sellInDay1 = app.items[0].sellIn;
-            int qualityDay1 = app.items[0].quality;
+            int sellInDay1 = app.items()[0].sellIn;
+            int qualityDay1 = app.items()[0].quality;
 
             app.updateQuality();
-            int sellInDay2 = app.items[0].sellIn;
-            int qualityDay2 = app.items[0].quality;
+            int sellInDay2 = app.items()[0].sellIn;
+            int qualityDay2 = app.items()[0].quality;
 
             app.updateQuality();
-            int sellInDay3 = app.items[0].sellIn;
-            int qualityDay3 = app.items[0].quality;
+            int sellInDay3 = app.items()[0].sellIn;
+            int qualityDay3 = app.items()[0].quality;
 
             // Verify
             assertThat(sellInDay1).isEqualTo(9);
@@ -381,17 +381,17 @@ class GildedRoseTest {
             app.updateQuality();
 
             // Verify
-            assertThat(app.items[0].sellIn).isEqualTo(9);
-            assertThat(app.items[0].quality).isEqualTo(19);
+            assertThat(app.items()[0].sellIn).isEqualTo(9);
+            assertThat(app.items()[0].quality).isEqualTo(19);
 
-            assertThat(app.items[1].sellIn).isEqualTo(9);
-            assertThat(app.items[1].quality).isEqualTo(21);
+            assertThat(app.items()[1].sellIn).isEqualTo(9);
+            assertThat(app.items()[1].quality).isEqualTo(21);
 
-            assertThat(app.items[2].sellIn).isEqualTo(5);
-            assertThat(app.items[2].quality).isEqualTo(80);
+            assertThat(app.items()[2].sellIn).isEqualTo(5);
+            assertThat(app.items()[2].quality).isEqualTo(80);
 
-            assertThat(app.items[3].sellIn).isEqualTo(9);
-            assertThat(app.items[3].quality).isEqualTo(22);
+            assertThat(app.items()[3].sellIn).isEqualTo(9);
+            assertThat(app.items()[3].quality).isEqualTo(22);
         }
     }
 }

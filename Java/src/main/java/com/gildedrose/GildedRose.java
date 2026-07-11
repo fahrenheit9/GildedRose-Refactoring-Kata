@@ -5,10 +5,14 @@ import com.gildedrose.updater.UpdaterFactory;
 
 class GildedRose {
 
-    final Item[] items;
+    private final Item[] items;
 
     public GildedRose(Item[] items) {
-        this.items = items;
+        this.items = items.clone();
+    }
+
+    public Item[] items() {
+        return items.clone();
     }
 
     public void updateQuality() {
