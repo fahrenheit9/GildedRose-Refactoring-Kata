@@ -9,11 +9,6 @@ import static org.assertj.core.api.Assertions.assertThatCode;
 
 class GildedRoseTest {
 
-    private static final String NORMAL_ITEM = "normal item";
-    private static final String AGED_BRIE = "Aged Brie";
-    private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
-    private static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
-
     @Test
     void foo() {
         // Setup
@@ -36,7 +31,7 @@ class GildedRoseTest {
         @Test
         void decreasesQualityByOneWhenSellInIsPositive() {
             // Setup
-            Item[] items = new Item[] { normalItem(10, 20) };
+            Item[] items = new Item[] { TestItems.normalItem(10, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -50,7 +45,7 @@ class GildedRoseTest {
         @Test
         void decreasesQualityByTwoWhenSellInIsZero() {
             // Setup
-            Item[] items = new Item[] { normalItem(0, 20) };
+            Item[] items = new Item[] { TestItems.normalItem(0, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -64,7 +59,7 @@ class GildedRoseTest {
         @Test
         void decreasesQualityByTwoWhenSellInIsNegative() {
             // Setup
-            Item[] items = new Item[] { normalItem(-1, 20) };
+            Item[] items = new Item[] { TestItems.normalItem(-1, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -78,7 +73,7 @@ class GildedRoseTest {
         @Test
         void decreasesQualityNotBelowZero() {
             // Setup
-            Item[] items = new Item[] { normalItem(0, 1) };
+            Item[] items = new Item[] { TestItems.normalItem(0, 1) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -97,7 +92,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByOneWhenSellInIsPositive() {
             // Setup
-            Item[] items = new Item[] { agedBrie(10, 20) };
+            Item[] items = new Item[] { TestItems.agedBrie(10, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -111,7 +106,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByTwoWhenSellInIsZero() {
             // Setup
-            Item[] items = new Item[] { agedBrie(0, 20) };
+            Item[] items = new Item[] { TestItems.agedBrie(0, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -125,7 +120,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByTwoWhenSellInIsNegative() {
             // Setup
-            Item[] items = new Item[] { agedBrie(-1, 20) };
+            Item[] items = new Item[] { TestItems.agedBrie(-1, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -139,7 +134,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityNotBeyond50() {
             // Setup
-            Item[] items = new Item[] { agedBrie(0, 49) };
+            Item[] items = new Item[] { TestItems.agedBrie(0, 49) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -153,7 +148,7 @@ class GildedRoseTest {
         @Test
         void qualityAlreadyAt50() {
             // Setup
-            Item[] items = new Item[] { agedBrie(0, 50) };
+            Item[] items = new Item[] { TestItems.agedBrie(0, 50) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -171,7 +166,7 @@ class GildedRoseTest {
         @Test
         void qualityAndSellInNeverChangeWhenSellInIsPositive() {
             // Setup
-            Item[] items = new Item[] { sulfuras(5, 80) };
+            Item[] items = new Item[] { TestItems.sulfuras(5, 80) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -185,7 +180,7 @@ class GildedRoseTest {
         @Test
         void qualityAndSellInNeverChangeWhenSellInIsAlreadyNegative() {
             // Setup
-            Item[] items = new Item[] { sulfuras(-5, 80) };
+            Item[] items = new Item[] { TestItems.sulfuras(-5, 80) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -204,7 +199,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByOneWhenSellInIsGt10() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(11, 20) };
+            Item[] items = new Item[] { TestItems.backstagePasses(11, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -218,7 +213,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByTwoWhenSellInIsLeq10() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(10, 20) };
+            Item[] items = new Item[] { TestItems.backstagePasses(10, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -232,7 +227,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByTwoWhenSellInIsSix() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(6, 20) };
+            Item[] items = new Item[] { TestItems.backstagePasses(6, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -246,7 +241,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByThreeWhenSellInIsLeq5() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(5, 20) };
+            Item[] items = new Item[] { TestItems.backstagePasses(5, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -260,7 +255,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityByThreeOnLastValidDayBeforeConcert() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(1, 20) };
+            Item[] items = new Item[] { TestItems.backstagePasses(1, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -274,7 +269,7 @@ class GildedRoseTest {
         @Test
         void dropsQualityToZeroWhenSellInIsZero() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(0, 20) };
+            Item[] items = new Item[] { TestItems.backstagePasses(0, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -288,7 +283,7 @@ class GildedRoseTest {
         @Test
         void dropsQualityToZeroWhenSellInIsNegative() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(-1, 20) };
+            Item[] items = new Item[] { TestItems.backstagePasses(-1, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -302,7 +297,7 @@ class GildedRoseTest {
         @Test
         void increasesQualityNotBeyond50() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(5, 48) };
+            Item[] items = new Item[] { TestItems.backstagePasses(5, 48) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -316,7 +311,7 @@ class GildedRoseTest {
         @Test
         void qualityAlreadyAt50() {
             // Setup
-            Item[] items = new Item[] { backstagePasses(5, 50) };
+            Item[] items = new Item[] { TestItems.backstagePasses(5, 50) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -344,7 +339,7 @@ class GildedRoseTest {
         @Test
         void accumulatesQualityOverMultipleDays() {
             // Setup
-            Item[] items = new Item[] { agedBrie(10, 20) };
+            Item[] items = new Item[] { TestItems.agedBrie(10, 20) };
             GildedRose app = new GildedRose(items);
 
             // Exercise
@@ -375,10 +370,10 @@ class GildedRoseTest {
         void updatesEachItemIndependentlyAccordingToItsOwnRule() {
             // Setup
             Item[] items = new Item[] {
-                normalItem(10, 20),
-                agedBrie(10, 20),
-                sulfuras(5, 80),
-                backstagePasses(10, 20)
+                TestItems.normalItem(10, 20),
+                TestItems.agedBrie(10, 20),
+                TestItems.sulfuras(5, 80),
+                TestItems.backstagePasses(10, 20)
             };
             GildedRose app = new GildedRose(items);
 
@@ -398,25 +393,5 @@ class GildedRoseTest {
             assertThat(app.items[3].sellIn).isEqualTo(9);
             assertThat(app.items[3].quality).isEqualTo(22);
         }
-    }
-
-    ////////////////////
-    // HELPER METHODS
-    ////////////////////
-
-    private static Item normalItem(int sellIn, int quality) {
-        return new Item(NORMAL_ITEM, sellIn, quality);
-    }
-
-    private static Item agedBrie(int sellIn, int quality) {
-        return new Item(AGED_BRIE, sellIn, quality);
-    }
-
-    private static Item sulfuras(int sellIn, int quality) {
-        return new Item(SULFURAS, sellIn, quality);
-    }
-
-    private static Item backstagePasses(int sellIn, int quality) {
-        return new Item(BACKSTAGE_PASSES, sellIn, quality);
     }
 }
